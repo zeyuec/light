@@ -19,17 +19,21 @@ define('SMARTY_RUNTIME_DIR', __DIR__.'/../runtime/smarty/');
 // 1. config
 class Light
 {
-    // default 
+    // website
+    const WEB_ROOT = 'http://localhost';
+    
+    // default
     const DEFAULT_CONTROLLER = 'post';
     const DEFAULT_ACTION = 'list';
 
     // debug level: use this flag to determine log status
     const DIST_LEVEl = 'prod';
 
+
     // db
     const DB_HOST = '127.0.0.1';
     const DB_PORT = '3306';
-    const DB_NAME = 'light';
+    const DB_NAME = 'light_blog';
     const DB_USER = 'root';
     const DB_PASS = '123456';
 

@@ -8,18 +8,24 @@ class LRouter {
     // print log to website
     private function log($str) {
         if ('debug' === Light::DIST_LEVEl) {
-            echo '[Router] '.$str.'<p>';
+            echo '<p>[Router] '.$str.'</p>';
         }
     }
 
     // remove the last '/' (example: localhost/abc/ will redirect to localhost/abc)
     private function redirectDirectoryRequest() {
         $request = $_SERVER['REQUEST_URI'];
-        if ($request[strlen($request)-1] == '/') {
+        $this->log('request_uri: '.$request);
+        if ($request != '/' && $request[strlen($request)-1] == '/') {
             header("Location: ".rtrim($request, '/'));
         }
     }
-    
+
+    // redirect to root
+    private function redirectToRoot() {
+        header("Location: ".Light::WEB_ROOT);
+    }
+
     // start 
     public function run() {
         $this->redirectDirectoryRequest();                   // treat a directory as a file
@@ -79,6 +85,7 @@ class LRouter {
             $controllerObj = new $controllerName();
             if (!method_exists($controllerObj, $actionName)) {
                 $this->log('controller doesn\'t have this actoin');
+                $this->redirectToRoot();
             } else {
                 foreach ($params as $key=>$value) {
                     $_GET[$key] = $value;
@@ -87,7 +94,9 @@ class LRouter {
             }
         } else {
             $this->log('controller file doesn\'t exist');
+            $this->redirectToRoot();
         }
     }
+
 }
 ?>
