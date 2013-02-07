@@ -62,6 +62,6 @@ Base Model. Support Yii-style (ex: TestModel::model()->doSomthing()). You need t
 
 4. **Notice**: Make sure your Smarty directories are writable.
 
-5. **Run Helloworld**: run **helloworld.sql** . It reads data from databse and write it out under markdown format.
+5. **Run Helloworld**: Run **helloworld.sql** then visit your website, this demo will reads data from database and write it out under markdown format.
 
 
