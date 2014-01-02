@@ -2,7 +2,7 @@
 @author zeyuec, 2013-02-03
 * * * 
 
-**This is a really simple and light php mvc framework for myself.**
+**This is a concise and fully functional PHP MVC framework.**
 
 ## Structure
 1. Model: Using pdo for DB connection.
