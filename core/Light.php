@@ -10,7 +10,7 @@ define('CONTROLLER_DIR', __DIR__.'/../controller/');
 define('MODEL_DIR', __DIR__.'/../model/');
 define('ERROR_404_FILE', __DIR__.'/../404.php');
 
-define('PHP_MARKDOWN_DIR', __DIR__.'/../lib/phpmarkdown-1.0.1p/');
+define('PHP_MARKDOWN_DIR', __DIR__.'/../lib/phpmarkdown/');
 define('SMARTY_DIR', __DIR__.'/../lib/Smarty-3.1.13/libs/');
 define('SMARTY_TEMPLATE', __DIR__.'/../template/');
 define('SMARTY_RUNTIME_DIR', __DIR__.'/../runtime/smarty/');
@@ -20,7 +20,7 @@ define('SMARTY_RUNTIME_DIR', __DIR__.'/../runtime/smarty/');
 class Light
 {
     // website
-    const WEB_ROOT = 'http://localhost';
+    const WEB_ROOT = 'http://obcerver.com';
     
     // default
     const DEFAULT_CONTROLLER = 'post';
@@ -29,9 +29,8 @@ class Light
     // debug level: use this flag to determine log status
     const DIST_LEVEl = 'prod';
 
-
     // db
-    const DB_HOST = '127.0.0.1';
+    const DB_HOST = 'localhost';
     const DB_PORT = '3306';
     const DB_NAME = 'light';
     const DB_USER = 'root';

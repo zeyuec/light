@@ -22,7 +22,7 @@ class LRouter {
     }
 
     // redirect to root
-    private function redirectToRoot() {
+    public static function redirectToRoot() {
         header("Location: ".Light::WEB_ROOT);
     }
 
@@ -44,7 +44,7 @@ class LRouter {
             $countPathArr = count($pathArr);
             if ($countPathArr < 2 || $countPathArr % 2 == 1) {
                 $this->log('params count error');
-                $uri = $this->createURI();
+                $this->redirectToRoot();
             } else {
                 $params = array();
                 for ($i=2; $i<$countPathArr; $i+=2) {

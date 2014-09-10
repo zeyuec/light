@@ -7,7 +7,7 @@
 
 // 0. import libs
 require_once(SMARTY_DIR.'Smarty.class.php');
-require_once(PHP_MARKDOWN_DIR.'markdown.php');
+require_once(PHP_MARKDOWN_DIR.'/Michelf/MarkdownExtra.inc.php');
 
 // 1. base controller
 class LController {
@@ -17,6 +17,7 @@ class LController {
     }
     private function initSmarty() {
         $this->smarty = new Smarty();
+        $this->smarty->assign('root', Light::WEB_ROOT);
         $this->smarty->setTemplateDir(SMARTY_TEMPLATE);
         $this->smarty->setCompileDir(SMARTY_RUNTIME_DIR.'compile/');
         $this->smarty->setConfigDir(SMARTY_RUNTIME_DIR.'config/');

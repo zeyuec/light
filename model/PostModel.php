@@ -18,7 +18,7 @@ class PostModel extends LModel {
         // pack
         foreach ($ret as $r) {
             $postList[] = array(
-                'content' => Markdown($r['content']),
+                'content' => \Michelf\MarkdownExtra::defaultTransform($r['content']),
                 );
         }
         return $postList;
